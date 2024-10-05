@@ -1,0 +1,50 @@
+.socials{
+    list-style: none;
+    position: relative;
+    z-index: 10;
+    @apply my-4;
+    li{
+        display: inline-block;
+        a{
+         svg{
+            @apply text-light-title dark:text-dark-title;
+         }
+        }
+        &:hover{
+         > .github-icon{
+            svg path{
+                fill: #6e40c9;
+            }
+         }
+         > .linkedin-icon{
+            svg path{
+                fill: #0a66c2;
+            }
+         }
+         > .instagram-icon{
+            svg{
+                path{
+                    fill: url(#Gradient1);
+                }
+                .stop1{
+                        stop-color: #8118fb;
+                    }
+                .stop2{
+                    stop-color: #fe1f81;
+                }
+                .stop3{
+                    stop-color: #fecd00;
+                }
+            } 
+            
+         }
+       }
+    }
+}
+.socials *{
+    transition: all 0.2s ease-in-out;
+    -webkit-transition: all 0.2s ease-in-out;
+    -moz-transition: all 0.2s ease-in-out;
+    -ms-transition: all 0.2s ease-in-out;
+    -o-transition: all 0.2s ease-in-out;
+}

@@ -1,0 +1,21 @@
+<ProfileAside>
+    <LogoAvatar />
+    <h1>Leonardo <span>Orozco</span></h1>
+    <h2>FrontEnd Developer</h2>
+    <RedesComponent />
+    <PillButton featured={true} text={"Disponible para trabajar"} />
+    <PillButton text={"Descargar CV"} handleClick={"funcion a ejecutar"} />
+</ProfileAside>
+<MainContent>
+    <HeaderLayout>
+        <NavigationComponent />
+    </HeaderLayout>
+    <ContentBlock>
+        <h3>Titulo del bloque</h3>
+        <div className="block-description">
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Assumenda esse ut sequi laboriosam ratione
+                ullam, optio aliquam illum quos deleniti aperiam natus non consectetur qui accusamus velit numquam unde
+                autem.</p>
+        </div>
+    </ContentBlock>
+</MainContent>
