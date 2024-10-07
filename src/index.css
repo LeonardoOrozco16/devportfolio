@@ -16,10 +16,8 @@
 
 html,body{
   width: 100%;
-  min-height: 100vh;
   margin: 0;
   padding: 0;
-  overflow-x: hidden;
 }
 *,*:after,*before{
   box-sizing: border-box;
@@ -39,6 +37,7 @@ body,#root,#main-content{
 
 #root{
    scrollbar-gutter: stable;
+   width: 100%;
 }
 
 /*@media (prefers-color-scheme: light) {

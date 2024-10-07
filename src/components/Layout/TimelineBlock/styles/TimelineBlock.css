@@ -1,0 +1,25 @@
+.timeline-block--item{
+    @apply py-2 px-16 flex flex-col items-center justify-center relative before:content-[""] before:absolute before:w-[1px] before:h-full before:bg-light-title dark:before:bg-dark-detail before:left-0 before:top-0 ;
+    &:hover{
+        .ballMark{
+            &:after{
+                @apply w-[120%] bg-opacity-0 transition-all ease-in-out duration-500 ;
+            }
+        }
+    }
+}
+.ballMark{
+    @apply w-[25px] h-[25px]  rounded-full absolute left-[-12.5px] overflow-hidden after:content-[""] after:absolute after:top-[-20%] after:left-0 after:w-0 after:h-[120%] after:bg-white after:bg-opacity-40 after:rotate-45 bg-light-detail;
+}
+.timeline_item--heading{
+    margin-bottom:15px;
+    h3{
+     @apply text-light-detail text-base uppercase font-semibold drop-shadow-md;
+    }
+    h4{
+        @apply text-xs font-semibold;
+    }
+    span{
+        @apply text-xs;
+    }
+}

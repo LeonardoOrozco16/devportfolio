@@ -11,11 +11,19 @@ function GlobalProvider({children}) {
         {id:3, name: "instagram" , url: "https://www.instagram.com/kuma_learns/" },
         
     ];
+    const navigation = [
+        { name: "Inicio", url: "/", icon: "home" },
+        { name: "Acerca De", url: "#about", icon: "about" },
+        { name: "Experiencia", url: "#experience", icon: "experience" },
+        { name: "Proyectos", url: "#proyects", icon: "proyects" },
+        { name: "Conocimientos", url: "#skills", icon: "skills" },
+        { name: "Aprendiendo Sobre", url:"#learning", icon:"learns"}
+    ];
     const handleMouseMove = (event) => {
         setCursorPosition({ x: event.clientX, y: event.clientY });
     }
     return (
-        <GlobalContext.Provider value={{activeDarkTheme, setActiveDarkTheme,storagedThemeName,cursorPosition,handleMouseMove,socialNetworks }}>
+        <GlobalContext.Provider value={{activeDarkTheme, setActiveDarkTheme,storagedThemeName,cursorPosition,handleMouseMove,socialNetworks,navigation}}>
             {children}
         </GlobalContext.Provider>
     );

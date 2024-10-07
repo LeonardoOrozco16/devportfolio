@@ -10,7 +10,7 @@ function SocialNetworks() {
         <ul className="socials">
             {socialNetworks.map((network) => (
                     <SocialItemUI
-                        key={network.id}
+                        key={network.name}
                         url={network.url}
                         name={network.name}
                     >

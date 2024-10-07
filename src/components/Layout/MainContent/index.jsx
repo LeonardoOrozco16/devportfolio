@@ -1,8 +1,8 @@
 function MainContent({children}) {
     return (
-        <section className="glass w-full lg:w-2/3">
+        <main className="w-full lg:w-2/3 z-10">
             {children}
-        </section>
+        </main>
     );
 }
 export { MainContent };
