@@ -9,15 +9,17 @@ import { PillButton } from "@components/PillButton";
 import { NavBar } from "@components/Layout/NavBar";
 import { SectionBlock } from "@structure/SectionBlock";
 import { SectionDescription } from "@structure/SectionBlock/SectionDescription";
-import { TimelineBlock,TimelineItem } from "@components/Layout/TimelineBlock";
+import { TimelineBlock, TimelineItem } from "@components/Layout/TimelineBlock";
+import { SkillsCarousel } from "@structure/SkillsCarousel";
 // Contexto Global
 import { GlobalContext } from "@hooks/GlobalContext";
+
 function AppUI() {
-    const {handleMouseMove,cursorPosition} = React.useContext(GlobalContext);
+    const {handleMouseMove,cursorPosition,skills,skillsToLearn} = React.useContext(GlobalContext);
     return (
         <section id="main-content" onMouseMove={(event) => {
             handleMouseMove(event);
-        }} className="relative max-w-[1440px] flex flex-col lg:flex-row  gap-12 py-[100px] px-4 mx-auto my-0">
+        }} className="relative max-w-[1200px] flex flex-col lg:flex-row  gap-12 py-[100px] px-4 mx-auto my-0">
             <div id="glowCursor" className="fixed hidden lg:flex w-[200px] h-[200px] rouded-full dark:bg-light-detail bg-dark-detail rounded-full opacity-40 blur-xl z-0" style={{ top: cursorPosition.y, left: cursorPosition.x, transform: 'translate(-50%,-50%)'}} ></div>
             <ThemeToggleButton estilos={"absolute top-2 right-2 p-2 rounded-full shadow-xl bg-light-bg dark:bg-dark-bg"} iconLight={"text-light-detail"} iconDark={"text-dark-bg"} />
             <ProfileAside>
@@ -88,12 +90,12 @@ function AppUI() {
                 </SectionBlock>
                 <SectionBlock sectionName={"contact"}>
                     <SectionDescription>
-                        <div className="w-full flex flex-row">
+                        <div className="w-full flex flex-col lg:flex-row">
                             <div className="w-5/6 flex items-center flex-col justify-around gap-2">
                                 <h2 className="w-full text-4xl uppercase font-thin">¿Quieres Hacer <span className="font-bold text-light-detail">Realidad</span> tu proyecto?</h2>
-                                <h3 className="w-full uppercase text-light-link font-bold text-2xl">¡Trabajemos Juntos para lograrlo!</h3>
+                                <h3 className="w-full uppercase my-2 lg:my-0 text-light-link font-bold text-2xl">¡Trabajemos Juntos para lograrlo!</h3>
                             </div>
-                            <div className="flex flex-col items-center justify-center gap-2">
+                            <div className="flex flex-row lg:flex-col items-center my-2 lg:my-0 lg:justify-center gap-2">
                                 <a href="https://www.linkedin.com/in/leonardoj-orozcob/" target="_blank" className="p-2 text-light-link text-lg border-light-link border-2 rounded-md w-24 text-center hover:bg-light-link trantision-all hover:text-white  dark:text-dark-link dark:border-dark-link dark:hover:bg-dark-link dark:hover:text-white" aria-label="ContactMe Linkedin" >Linkedin</a>
                                 <a href="mailto:devorozcol@gmail.com?subject=Hagamos%20un%20proyecto!" className="p-2 bg-transparent text-light-link text-lg border-light-link border-2 rounded-md w-24 text-center hover:bg-light-link trantision-all hover:text-white dark:text-dark-link dark:border-dark-link dark:hover:bg-dark-link dark:hover:text-white" aria-label="ContactMe Mail">GMail</a>
                             </div>
@@ -106,14 +108,17 @@ function AppUI() {
                         <p>
                            Durante mi experiencia laboral, siempre enfrenté retos que me impulsaron a adquirir nuevos conocimientos para satisfacer las necesidades de cada proyecto. Estos desafíos no solo me motivaron a mejorar mis habilidades, sino que también alimentaron mi pasión por el aprendizaje continuo, permitiéndome mantenerme actualizado y aportar soluciones innovadorase.
                         </p>
+                        <SkillsCarousel skillList={skills}/>
                     </SectionDescription>
                 </SectionBlock>
-                <SectionBlock sectionName={"skills"}>
+                <SectionBlock sectionName={"learning"}>
                     <TitleComposed type={"h2"} primaryWord={"Actualmente"} secondaryWord={"Aprendiendo"} decorated uppercase />
                     <SectionDescription>
                         <p>
-                           Durante mi experiencia laboral, siempre enfrenté retos que me impulsaron a adquirir nuevos conocimientos para satisfacer las necesidades de cada proyecto. Estos desafíos no solo me motivaron a mejorar mis habilidades, sino que también alimentaron mi pasión por el aprendizaje continuo, permitiéndome mantenerme actualizado y aportar soluciones innovadorase.
+                           Comencé como desarrollador autodidacta, aprendiendo a medida que enfrentaba nuevos retos. Actualmente, estoy formalizando mis conocimientos a través de la plataforma Platzi, mientras profundizo mis habilidades investigando y estudiando el trabajo de profesionales para incorporar mejores prácticas en mi desempeño.
                         </p>
+                        <p>Eh aqui algunas tecnologias que estoy aprendiendo y deseo aprender:</p>
+                        <SkillsCarousel skillList={skillsToLearn}/>
                     </SectionDescription>
                 </SectionBlock>
             </MainContent>

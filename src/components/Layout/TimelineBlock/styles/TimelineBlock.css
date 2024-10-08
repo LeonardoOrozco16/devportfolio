@@ -1,5 +1,5 @@
 .timeline-block--item{
-    @apply py-2 px-16 flex flex-col items-center justify-center relative before:content-[""] before:absolute before:w-[1px] before:h-full before:bg-light-title dark:before:bg-dark-detail before:left-0 before:top-0 ;
+    @apply py-2 px-8 lg:px-16 flex flex-col items-center justify-center relative before:content-[""] before:absolute before:w-[1px] before:h-full before:bg-light-title dark:before:bg-dark-detail before:left-0 before:top-0 ;
     &:hover{
         .ballMark{
             &:after{
@@ -14,12 +14,12 @@
 .timeline_item--heading{
     margin-bottom:15px;
     h3{
-     @apply text-light-detail text-base uppercase font-semibold drop-shadow-md;
+     @apply text-light-detail text-xl lg:text-base uppercase font-semibold drop-shadow-md;
     }
     h4{
-        @apply text-xs font-semibold;
+        @apply text-sm lg:text-xs font-semibold;
     }
     span{
-        @apply text-xs;
+        @apply text-sm lg:text-xs;
     }
 }

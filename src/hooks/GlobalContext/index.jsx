@@ -19,11 +19,13 @@ function GlobalProvider({children}) {
         { name: "Conocimientos", url: "#skills", icon: "skills" },
         { name: "Aprendiendo Sobre", url:"#learning", icon:"learns"}
     ];
+    const skills = ["html", "css", "javascript", "git", "sass", "bootstrap", "tailwind", "react", "php", "laravel", "wordpress", "mysql"];
+    const skillsToLearn = ["node", "python", "mongo", "next"];
     const handleMouseMove = (event) => {
         setCursorPosition({ x: event.clientX, y: event.clientY });
     }
     return (
-        <GlobalContext.Provider value={{activeDarkTheme, setActiveDarkTheme,storagedThemeName,cursorPosition,handleMouseMove,socialNetworks,navigation}}>
+        <GlobalContext.Provider value={{activeDarkTheme, setActiveDarkTheme,storagedThemeName,cursorPosition,handleMouseMove,socialNetworks,navigation,skills,skillsToLearn}}>
             {children}
         </GlobalContext.Provider>
     );

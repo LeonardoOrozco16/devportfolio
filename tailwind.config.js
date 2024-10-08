@@ -10,13 +10,13 @@ export default {
         bg: "#ffffff",
         title: "#01113d",
         link: "#0338c9",
-        detail: "#c4a83b",
+        detail: "#997a04",
         text: "#424242",
       },
       dark: {
         bg: "#01113d",
         title: "#ffffff",
-        link: "#c4a83b",
+        link: "#997a04",
         detail: "#0338c9",
         text: "#e0e0e0",
       },
@@ -28,5 +28,5 @@ export default {
       },
     },
   },
-  plugins: [],
+  plugins: [require("tailwind-scrollbar-hide")],
 };
