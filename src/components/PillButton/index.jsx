@@ -1,7 +1,7 @@
 function PillButton({ featured, flag, text, aria_label, handleClickAction }) {
     return (
         <>
-            <button type="button" className={`relative inline-flex overflow-hidden rounded-full p-[2px] ${flag && 'pointer-events-none'} mb-4 w-2/3`} aria-label={aria_label} onClick={()=>{handleClickAction}}>
+            <button type="button" className={`relative inline-flex overflow-hidden rounded-full p-[2px] ${flag && 'pointer-events-none'} mb-4 w-2/3`} aria-label={aria_label} onClick={()=>{handleClickAction()}}>
                 {featured && (
                     <>
                         <span className="absolute inset-[-1000%] animate-[spin_2s_linear_infinite] bg-[conic-gradient(from_90deg_at_50%_50%,#51E4B8_0%,#21554E_50%,#51E4B8_100%)]"></span> 
