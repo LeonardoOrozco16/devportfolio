@@ -9,7 +9,7 @@
     }
 }
 .ballMark{
-    @apply w-[25px] h-[25px]  rounded-full absolute left-[-12.5px] overflow-hidden after:content-[""] after:absolute after:top-[-20%] after:left-0 after:w-0 after:h-[120%] after:bg-white after:bg-opacity-40 after:rotate-45 bg-light-detail;
+    @apply w-[25px] h-[25px]  rounded-full absolute left-[-12.5px] overflow-hidden after:content-[""] after:absolute after:top-[-20%] after:left-0 after:w-0 after:h-[120%] after:bg-white after:bg-opacity-100 after:rotate-45 bg-light-detail;
 }
 .timeline_item--heading{
     margin-bottom:15px;

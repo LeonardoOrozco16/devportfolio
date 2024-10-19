@@ -3,7 +3,7 @@ import { useLocalStorage } from "@hooks/useLocalStorage";
 const GlobalContext = React.createContext();
 
 function GlobalProvider({children}) {
-    const { activeDarkTheme, setActiveDarkTheme, storagedThemeName } = useLocalStorage();
+    const { activeDarkTheme, toggleTheme } = useLocalStorage();
     const [cursorPosition, setCursorPosition] = React.useState({ x: 0, y: 0 });
     const socialNetworks = [
         {id: 1, name: "github", url: "https://github.com/LeonardoOrozco16" },
@@ -24,8 +24,11 @@ function GlobalProvider({children}) {
     const handleMouseMove = (event) => {
         setCursorPosition({ x: event.clientX, y: event.clientY });
     }
+    const handleDownload = () => {
+        window.open('https://docs.google.com/document/d/11axgn2CQRDjnOHiusKN0BtzIKrjDZDW3cQQfLcqkzYo/edit?usp=drive_link', '_blank');
+    }
     return (
-        <GlobalContext.Provider value={{activeDarkTheme, setActiveDarkTheme,storagedThemeName,cursorPosition,handleMouseMove,socialNetworks,navigation,skills,skillsToLearn}}>
+        <GlobalContext.Provider value={{activeDarkTheme,toggleTheme,cursorPosition,handleMouseMove,socialNetworks,navigation,skills,skillsToLearn,handleDownload}}>
             {children}
         </GlobalContext.Provider>
     );

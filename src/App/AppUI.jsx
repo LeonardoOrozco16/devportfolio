@@ -15,12 +15,12 @@ import { SkillsCarousel } from "@structure/SkillsCarousel";
 import { GlobalContext } from "@hooks/GlobalContext";
 
 function AppUI() {
-    const {handleMouseMove,cursorPosition,skills,skillsToLearn} = React.useContext(GlobalContext);
+    const {handleMouseMove, cursorPosition, skills, skillsToLearn, handleDownload } = React.useContext(GlobalContext);
     return (
         <section id="main-content" onMouseMove={(event) => {
             handleMouseMove(event);
-        }} className="relative max-w-[1200px] flex flex-col lg:flex-row  gap-12 py-[100px] px-4 mx-auto my-0">
-            <div id="glowCursor" className="fixed hidden lg:flex w-[200px] h-[200px] rouded-full dark:bg-light-detail bg-dark-detail rounded-full opacity-40 blur-xl z-0" style={{ top: cursorPosition.y, left: cursorPosition.x, transform: 'translate(-50%,-50%)'}} ></div>
+        }} className={`relative max-w-[1200px] flex flex-col lg:flex-row  gap-12 py-[100px] px-4 mx-auto my-0`}>
+            <div id="glowCursor" className="fixed hidden lg:flex w-[200px] h-[200px] rouded-full dark:bg-[#1b3477 ] bg-dark-detail rounded-full opacity-40 blur-xl z-0" style={{ top: cursorPosition.y, left: cursorPosition.x, transform: 'translate(-50%,-50%)'}} ></div>
             <ThemeToggleButton estilos={"absolute top-2 right-2 p-2 rounded-full shadow-xl bg-light-bg dark:bg-dark-bg"} iconLight={"text-light-detail"} iconDark={"text-dark-bg"} />
             <ProfileAside>
                 <AvatarLogo />
@@ -28,7 +28,7 @@ function AppUI() {
                 <h2 className="font-thin dark:text-dark-title text-light-title">Frontend Developer</h2>
                 <SocialNetworks />
                 <PillButton featured={true} flag={true} aria_label={"Open to Work"} text={"Disponible para trabajar"} />
-                <PillButton aria_label={"Dowload CV"} text={"Descargar CV"} />
+                <PillButton aria_label={"Dowload CV"} text={"Descargar CV"} handleClickAction={handleDownload} />
             </ProfileAside>
             <MainContent>
                 <NavBar/>
